@@ -16,6 +16,7 @@ import {
   CreditCard,
   BanknoteArrowDown,
   ChartColumnDecreasing,
+  ChartNoAxesCombined,
 } from "lucide-react";
 
 import { NavMain } from "@/components/sidebar/nav-main";
@@ -27,6 +28,9 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
 
@@ -160,6 +164,19 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
+        <SidebarMenu className="ms-5">
+          <SidebarMenuItem>
+            <SidebarMenuButton >
+              <a href='/'>
+
+              <ChartNoAxesCombined/>
+              </a>
+              <span>Dashboard</span>
+            </SidebarMenuButton>
+            
+          </SidebarMenuItem>
+        </SidebarMenu>
+
         <NavMain items={data.navMain} />
         {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
