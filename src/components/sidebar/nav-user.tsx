@@ -23,6 +23,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { ModeToggle } from "../mode-toggle";
 
 export function NavUser({
   user,
@@ -93,6 +94,11 @@ export function NavUser({
               <DropdownMenuItem>
                 <Bell />
                 Notifications
+              </DropdownMenuItem>
+              {/* Toggle Theme  */}
+              <DropdownMenuItem>
+                <ModeToggle variant="ghost" />
+                Thema
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

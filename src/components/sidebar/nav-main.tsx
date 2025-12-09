@@ -1,4 +1,8 @@
-import { ChevronRight, type LucideIcon } from "lucide-react";
+import {
+  ChevronRight,
+  ChartNoAxesCombined,
+  type LucideIcon,
+} from "lucide-react";
 
 import {
   Collapsible,
@@ -35,6 +39,16 @@ export function NavMain({
     <SidebarGroup>
       <SidebarGroupLabel>Principal</SidebarGroupLabel>
       <SidebarMenu>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton tooltip="Dashboard">
+              <a href="/" className="flex">
+                <ChartNoAxesCombined />
+                <span className="mt-1 ms-1">Dashboard</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
         {items.map((item) => (
           <Collapsible
             key={item.title}

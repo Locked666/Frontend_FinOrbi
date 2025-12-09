@@ -5,6 +5,8 @@ import { Login } from "@/pages/auth/login";
 import PageExpense from "@/pages/expense/PageExpense";
 import MainLayout from "@/layouts/layout";
 import HomePage from "@/pages/home/HomePage";
+import PageCalendar from "@/pages/calendar/PageCalendar";
+import Example from "@/pages/teste/card";
 
 export default function AppRoutes() {
   return (
@@ -25,6 +27,8 @@ export default function AppRoutes() {
           {/* ROTAS FILHAS QUE APARECEM NO OUTLET */}
           <Route index element={<HomePage />} />
           <Route path="expense" element={<PageExpense />} />
+          <Route path="calendar" element={<PageCalendar />} />
+          <Route path="card" element={<Example />} />
           {/* adicione mais rotas do sidebar aqui */}
         </Route>
       </Routes>

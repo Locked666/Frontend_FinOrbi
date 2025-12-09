@@ -15,8 +15,21 @@ import {
   Landmark,
   CreditCard,
   BanknoteArrowDown,
-  ChartColumnDecreasing,
-  ChartNoAxesCombined,
+  // ChartColumnDecreasing,
+  // ChartNoAxesCombined,
+  // ChartColumnIncreasing,
+  UserRoundCog,
+  Users,
+  ReceiptText,
+  BanknoteArrowUp,
+  Wrench,
+  Scroll,
+  ChartNoAxesColumnIncreasing,
+  ChartNoAxesColumnDecreasing,
+  FileStack,
+  Contact,
+  Contact2,
+  ChartBarStacked,
 } from "lucide-react";
 
 import { NavMain } from "@/components/sidebar/nav-main";
@@ -28,9 +41,9 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
+  // SidebarMenu,
+  // SidebarMenuButton,
+  // SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
 
@@ -60,6 +73,7 @@ const data = {
     },
   ],
   navMain: [
+    // Cadastro
     {
       title: "Cadastros",
       url: "#",
@@ -72,15 +86,18 @@ const data = {
           icon: ChartBarBig,
         },
         {
-          title: "Starred",
+          title: "SubCategoria",
           url: "#",
+          icon: ChartBarStacked,
         },
         {
-          title: "Settings",
+          title: "Credores",
           url: "#",
+          icon: Contact2,
         },
       ],
     },
+    // Contas e cartões
     {
       title: "Contas e Cartões",
       url: "#",
@@ -96,44 +113,66 @@ const data = {
           url: "#",
           icon: CreditCard,
         },
+      ],
+    },
+    // Movimentações
+    {
+      title: "Movimentações",
+      url: "/movement",
+      icon: ReceiptText,
+      items: [
         {
-          title: "Quantum",
-          url: "#",
+          title: "Despesas",
+          url: "/expense",
+          icon: BanknoteArrowDown,
+        },
+        {
+          title: "Receitas",
+          url: "/reveue",
+          icon: BanknoteArrowUp,
         },
       ],
     },
+
+    // Relatórios
     {
-      title: "Despesas",
+      title: "Relatórios",
       url: "#",
-      icon: BanknoteArrowDown,
+      icon: Scroll,
+      isActive: true,
       items: [
         {
           title: "Movimentações",
-          url: "/expense",
-          icon: ChartColumnDecreasing,
+          url: "/report/movement",
+          icon: ChartNoAxesColumnIncreasing,
+        },
+        {
+          title: "Cadastros",
+          url: "/report/register",
+          icon: FileStack,
         },
       ],
     },
+    // Settings
     {
-      title: "Settings",
+      title: "Configurações",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "Parâmetros",
           url: "#",
+          icon: Wrench,
         },
         {
-          title: "Team",
+          title: "Usuário",
           url: "#",
+          icon: UserRoundCog,
         },
         {
-          title: "Billing",
+          title: "Grupos",
           url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
+          icon: Users,
         },
       ],
     },
@@ -164,19 +203,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <SidebarMenu className="ms-5">
-          <SidebarMenuItem>
-            <SidebarMenuButton >
-              <a href='/'>
-
-              <ChartNoAxesCombined/>
-              </a>
-              <span>Dashboard</span>
-            </SidebarMenuButton>
-            
-          </SidebarMenuItem>
-        </SidebarMenu>
-
         <NavMain items={data.navMain} />
         {/* <NavProjects projects={data.projects} /> */}
       </SidebarContent>
