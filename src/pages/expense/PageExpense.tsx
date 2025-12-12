@@ -2,7 +2,16 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Plus, Search,DollarSign, ArrowUp, TrendingUpDown, Pencil, Trash } from "lucide-react";
+import {
+  Plus,
+  Search,
+  DollarSign,
+  ArrowUp,
+  TrendingUpDown,
+  Pencil,
+  Trash,
+} from "lucide-react";
+import { useModal } from "@/context/ModalContext";
 
 interface Expense {
   id: number;
@@ -12,6 +21,19 @@ interface Expense {
 }
 
 export default function ExpensePage() {
+  const { openModal } = useModal();
+
+  function callOpenModal() {
+    openModal("revenue", {
+      type: "insert",
+      data: {
+        value: 1200,
+        description: "Freelance",
+        received: true,
+      },
+    });
+  }
+
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const pageSize = 5;
@@ -36,9 +58,10 @@ export default function ExpensePage() {
     <div className="p-6 space-y-6 w-full">
       {/* Header */}
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Gastos</h1>
-        <Button className="flex items-center gap-2">
-          <Plus className="w-4 h-4" /> Inserir Gasto
+        <h1 className="text-2xl font-bold">Despesas</h1>
+
+        <Button className="flex items-center gap-2" onClick={callOpenModal}>
+          <Plus className="w-4 h-4" /> Inserir Despesas
         </Button>
       </div>
 
@@ -113,7 +136,10 @@ export default function ExpensePage() {
 
       {/* Pagination */}
       <div className="flex items-center justify-center gap-4 pt-4">
-        <Button onClick={() => setPage(Math.max(1, page - 1))} disabled={page === 1}>
+        <Button
+          onClick={() => setPage(Math.max(1, page - 1))}
+          disabled={page === 1}
+        >
           Anterior
         </Button>
         <span>

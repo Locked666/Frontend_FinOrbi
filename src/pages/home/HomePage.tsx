@@ -1,24 +1,31 @@
-import React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Calendar } from "@/components/ui/calendar"
+// import React from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Calendar } from "@/components/ui/calendar";
 import {
   TrendingUp,
   TrendingDown,
   DollarSign,
   Search,
   Edit,
-  Trash2
-} from "lucide-react"
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
+  Trash2,
+} from "lucide-react";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 const data = [
   { month: "Jan", receita: 5000, despesa: 3200 },
   { month: "Fev", receita: 6200, despesa: 4100 },
   { month: "Mar", receita: 5800, despesa: 3900 },
-]
+];
 
 export default function DashboardPage() {
   return (
@@ -93,7 +100,9 @@ export default function DashboardPage() {
             <Input placeholder="Descrição" className="max-w-xs" />
             <Input placeholder="Data" type="date" className="max-w-xs" />
             <Input placeholder="Tipo (Receita/Despesa)" className="max-w-xs" />
-            <Button variant="outline"><Search className="h-4 w-4 mr-2" /> Filtrar</Button>
+            <Button variant="outline">
+              <Search className="h-4 w-4 mr-2" /> Filtrar
+            </Button>
           </div>
 
           <Table>
@@ -110,22 +119,34 @@ export default function DashboardPage() {
               <TableRow>
                 <TableCell>10/02/2025</TableCell>
                 <TableCell>Venda X</TableCell>
-                <TableCell className="text-green-600 font-medium">Receita</TableCell>
+                <TableCell className="text-green-600 font-medium">
+                  Receita
+                </TableCell>
                 <TableCell>R$ 2.500</TableCell>
                 <TableCell className="flex gap-2">
-                  <Button size="sm" variant="outline"><Edit className="h-4 w-4" /></Button>
-                  <Button size="sm" variant="destructive"><Trash2 className="h-4 w-4" /></Button>
+                  <Button size="sm" variant="outline">
+                    <Edit className="h-4 w-4" />
+                  </Button>
+                  <Button size="sm" variant="destructive">
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
                 </TableCell>
               </TableRow>
 
               <TableRow>
                 <TableCell>12/02/2025</TableCell>
                 <TableCell>Conta de energia</TableCell>
-                <TableCell className="text-red-600 font-medium">Despesa</TableCell>
+                <TableCell className="text-red-600 font-medium">
+                  Despesa
+                </TableCell>
                 <TableCell>R$ 450</TableCell>
                 <TableCell className="flex gap-2">
-                  <Button size="sm" variant="outline"><Edit className="h-4 w-4" /></Button>
-                  <Button size="sm" variant="destructive"><Trash2 className="h-4 w-4" /></Button>
+                  <Button size="sm" variant="outline">
+                    <Edit className="h-4 w-4" />
+                  </Button>
+                  <Button size="sm" variant="destructive">
+                    <Trash2 className="h-4 w-4" />
+                  </Button>
                 </TableCell>
               </TableRow>
             </TableBody>
@@ -133,5 +154,5 @@ export default function DashboardPage() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
